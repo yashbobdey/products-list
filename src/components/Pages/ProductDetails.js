@@ -1,10 +1,8 @@
-import { useEffect } from "react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Spinner, Alert } from "react-bootstrap";
 import { getProductDetails } from "../../actions/ProductDetailsActions";
-import "./ProductDetails.css";
 import ProductDetailsContainer from "../UI/ProductDetailsContainer/ProductDetailsContainer";
 
 export default function ProductDetails() {
@@ -14,14 +12,13 @@ export default function ProductDetails() {
 
   useEffect(() => {
     dispatch(getProductDetails(productId));
-  }, [dispatch]);
+  }, [dispatch, productId]);
 
-  const productDetails = useSelector((state) => state.product.productDetails);
-  const isLoading = useSelector((state) => state.product.loading);
-  const error = useSelector((state) => state.product.error);
-  console.log(productDetails);
+  const { loading, productDetails, error } = useSelector(
+    (state) => state.product
+  );
 
-  return isLoading ? (
+  return loading ? (
     <div className="loader">
       <Spinner animation="border" variant="secondary" />
     </div>

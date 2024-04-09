@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Carousel, Spinner, Badge } from "react-bootstrap";
-import { FaDollarSign } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+import { Container, Row, Col, Carousel, Badge } from "react-bootstrap";
+import { FaDollarSign, FaStar } from "react-icons/fa";
 
 export default function ProductDetailsContainer(props) {
   return (
@@ -40,13 +39,10 @@ export default function ProductDetailsContainer(props) {
                   <FaStar className="ml-1 mb-1" />
                 </Badge>
               </p>
-              <h6></h6>
             </div>
             <h5>
-              <strong>
-                <FaDollarSign className="mb-1" />
-                {props.productDetails.price}
-              </strong>{" "}
+              <FaDollarSign className="mb-1" />
+              {props.productDetails.price}{" "}
               <>
                 {props.productDetails.discountPercentage &&
                   `(-${props.productDetails.discountPercentage} %)`}

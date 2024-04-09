@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import MySwitch from "./MySwitch.js";
+import ProductsSwitch from "./ProductsSwitch.js";
 
-export default function MyRouter() {
+export default function ProductsRouter() {
   return (
     <div>
       <Router>
-        <MySwitch />
+        <ProductsSwitch />
       </Router>
     </div>
   );

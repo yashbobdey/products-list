@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import MyRouter from "./components/Utilities/MyRouter";
+import ProductsRouter from "./components/Utilities/ProductsRouter";
 function App() {
   return (
     <div className="App">
-      <MyRouter />
+      <ProductsRouter />
     </div>
   );
 }

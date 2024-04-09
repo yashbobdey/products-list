@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Products from "../Pages/Products";
 import Cart from "../Pages/ProductDetails";
 
-export default function MySwitch() {
+export default function ProductsSwitch() {
   return (
     <div>
       <Routes>

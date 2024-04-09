@@ -1,22 +1,20 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, Alert, Pagination } from "react-bootstrap";
+import { Container, Row, Col, Alert, Spinner } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../../actions/ProductActions";
 import ProductCard from "../UI/ProductCard/ProductCard.js";
-import { Spinner } from "react-bootstrap";
 import PaginationComponent from "../UI/Pagination/PaginationComponent.js";
 import "./Products.css";
 
 export default function Products() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getProducts());
   }, []);
-  const products = useSelector((state) => state.products.products);
-  const isLoading = useSelector((state) => state.products.loading);
-  const error = useSelector((state) => state.products.error);
+
+  const { loading, products, error } = useSelector((state) => state.products);
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 10;
@@ -52,7 +50,7 @@ export default function Products() {
 
   return (
     <div>
-      {isLoading ? (
+      {loading ? (
         <div className="loader">
           <Spinner animation="border" variant="secondary" />
         </div>
