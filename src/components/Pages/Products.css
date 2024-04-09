@@ -1,0 +1,11 @@
+.loader{
+  margin-top: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination{
+  margin: auto;
+  justify-content: center;
+}
